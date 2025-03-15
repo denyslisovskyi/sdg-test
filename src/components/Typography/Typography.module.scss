@@ -1,0 +1,74 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.typography {
+  margin: 0;
+  padding: 0;
+  transition: color $transition-fast;
+}
+
+.variantH1 {
+  font-weight: $font-weight-xl;
+  font-size: $font-size-4xl;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+
+  @include respondTo("mobile") {
+    font-size: $font-size-md;
+  }
+}
+
+.variantH2 {
+  font-weight: $font-weight-base;
+  font-size: $font-size-lg;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+
+  @include respondTo("mobile") {
+    font-size: $font-size-tiny;
+  }
+}
+
+.variantH3 {
+  font-weight: $font-weight-lg;
+  font-size: $font-size-base;
+  line-height: 110%;
+  letter-spacing: -0.05em;
+  text-align: center;
+
+  @include respondTo("mobile") {
+    font-size: 1.125rem;
+  }
+}
+
+.variantP {
+  font-weight: $font-weight-lg;
+  font-size: $font-size-base;
+  line-height: 150%;
+
+  @include respondTo("mobile") {
+    font-size: $font-size-sm;
+  }
+}
+
+.variantSpan {
+  font-weight: $font-weight-base;
+  font-size: $font-size-base;
+  line-height: 150%;
+
+  @include respondTo("mobile") {
+    font-size: $font-size-sm;
+  }
+}
+
+.colorPrimary {
+  color: $primary-color;
+}
+
+.colorSecondary {
+  color: $secondary-color;
+}
+
+.colorGradient {
+  @include gradientText;
+}

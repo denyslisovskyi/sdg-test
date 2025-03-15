@@ -1,0 +1,62 @@
+// Font family
+$font-family: "Open Sans", sans-serif;
+
+// colors
+$primary-color: #3a3a3a;
+$secondary-color: #e51726;
+$tertiary-color: #f5f5f5f5;
+
+$gradient-start-color: hsl(356, 90%, 45%);
+$gradient-end-color: hsl(324, 75%, 41%);
+
+//gradient
+$primary-gradient: linear-gradient(
+  to right,
+  #ff3131 0%,
+  #ec2455 50%,
+  #d4208c 100%
+);
+
+// font-sizes
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-tiny: 1.176rem;
+$font-size-base: 1.4375rem;
+$font-size-md: 2.188rem;
+$font-size-lg: 2.375rem;
+$font-size-xl: 3.438rem;
+$font-size-4xl: 4.8125rem;
+
+// font-weight
+$font-weight-sm: 400;
+$font-weight-base: 600;
+$font-weight-lg: 700;
+$font-weight-xl: 800;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-base: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 2.5rem;
+$spacing-3xl: 3rem;
+$spacing-4xl: 4.5rem;
+$spacing-5xl: 5rem;
+
+// Border radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-full: 50%;
+
+// Breakpoints
+$breakpoint-mobile-min: 320px;
+$breakpoint-mobile-max: 1600px;
+
+// Z-index
+$z-index-modal: 2000;
+
+// Transitions
+$transition-fast: 0.2s;

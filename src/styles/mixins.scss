@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+@mixin respondTo($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (min-width: $breakpoint-mobile-min) and (max-width: $breakpoint-mobile-max) {
+      @content;
+    }
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradientText {
+  background: linear-gradient(to right, #e51726 0%, #d32b71 50%, #d4208c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@mixin gradientBackground {
+  background: linear-gradient(to right, #e51726 0%, #d4208c 100%);
+}

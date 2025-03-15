@@ -1,0 +1,38 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+@use "sass:color";
+
+.button {
+  @include flexCenter;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast,
+    box-shadow $transition-fast;
+  text-transform: uppercase;
+}
+
+.buttonSizeMedium {
+  padding: $spacing-lg $spacing-xs;
+  font-size: $font-size-tiny;
+  min-width: 24.1875rem;
+  height: $spacing-5xl;
+
+  @include respondTo("mobile") {
+    padding: $spacing-base $spacing-xs;
+    min-width: 14rem;
+    height: $spacing-3xl;
+    font-size: $font-size-sm;
+  }
+}
+
+.buttonVariantGradient {
+  @include gradientBackground;
+  color: $tertiary-color;
+  box-shadow: 0 $spacing-xs $spacing-sm rgba($secondary-color, 0.25);
+}
+
+.buttonFullWidth {
+  width: 100%;
+}

@@ -1,0 +1,302 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 12.688rem 21rem 12.688rem 5.625rem;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+
+  @include respondTo("mobile") {
+    flex-direction: column;
+    padding: $spacing-lg $spacing-base;
+  }
+}
+
+.profilesContainer {
+  position: relative;
+  width: 45rem;
+  height: 35rem;
+
+  @include respondTo("mobile") {
+    width: 16.25rem;
+    height: 18.125rem;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.profileCircle {
+  position: absolute;
+  border-radius: $border-radius-full;
+  overflow: hidden;
+
+  &:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 17.47rem;
+    height: 17.47rem;
+    z-index: 1;
+
+    @include respondTo("mobile") {
+      top: 0;
+      left: 10.5rem;
+      width: 6.938rem;
+      height: 6.938rem;
+    }
+  }
+
+  // Top left
+  &:nth-child(1) {
+    top: 10rem;
+    left: 2.5rem;
+    width: 10.188rem;
+    height: 10.188rem;
+
+    @include respondTo("mobile") {
+      top: 3.5rem;
+      left: 2.5rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  // Top right
+  &:nth-child(3) {
+    top: 14rem;
+    left: 29rem;
+    width: 11.625rem;
+    height: 11.625rem;
+
+    @include respondTo("mobile") {
+      top: 6rem;
+      left: 12.5rem;
+      width: 4.625rem;
+      height: 4.625rem;
+    }
+  }
+
+  // Bottom left
+  &:nth-child(4) {
+    bottom: -1rem;
+    left: -3.125rem;
+    width: 14.375rem;
+    height: 14.375rem;
+
+    @include respondTo("mobile") {
+      top: 8rem;
+      left: 0rem;
+      width: 5.688rem;
+      height: 5.688rem;
+    }
+  }
+
+  // Bottom center
+  &:nth-child(5) {
+    bottom: -9rem;
+    left: 12rem;
+    width: 12.875rem;
+    height: 12.875rem;
+    z-index: 3;
+
+    @include respondTo("mobile") {
+      top: 12rem;
+      left: 5.5rem;
+      width: 5.125rem;
+      height: 5.125rem;
+    }
+  }
+
+  // Bottom right
+  &:nth-child(6) {
+    bottom: -3rem;
+    right: 8rem;
+    width: 11.25rem;
+    height: 11.25rem;
+
+    @include respondTo("mobile") {
+      top: 11rem;
+      left: 11rem;
+      width: 4.438rem;
+      height: 4.438rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.heartContainer {
+  position: absolute;
+  left: 22.5rem;
+  top: 17.5rem;
+
+  @include respondTo("mobile") {
+    left: 8.5rem;
+    top: 9.5rem;
+  }
+}
+
+.heartIcon {
+  position: absolute;
+  width: 11.25rem;
+  height: 11.25rem;
+  left: -9rem;
+  top: 0rem;
+  z-index: 2;
+
+  @include respondTo("mobile") {
+    width: 4.438rem;
+    height: 4.438rem;
+    left: -2rem;
+    top: -2rem;
+  }
+}
+
+.heartOutline {
+  position: absolute;
+  top: -6rem;
+  left: -14.5rem;
+  width: 22.313rem;
+  height: 22.313rem;
+  background: $tertiary-color;
+  border-radius: 50%;
+  opacity: 80%;
+  z-index: 1;
+
+  @include respondTo("mobile") {
+    width: 8.875rem;
+    height: 8.875rem;
+    left: -4rem;
+    top: -4.5rem;
+  }
+}
+
+.title {
+  margin-bottom: $spacing-lg;
+}
+
+.modalTitle {
+  width: 60%;
+  text-align: center;
+  margin-bottom: 3.75rem;
+  color: $primary-color;
+  padding: 0 2.5rem;
+
+  @include respondTo("mobile") {
+    width: 100%;
+    margin-bottom: $font-size-lg;
+  }
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+
+.formGroup {
+  width: 100%;
+  margin-bottom: 1.875rem;
+  position: relative;
+
+  @include respondTo("mobile") {
+    margin-bottom: 1.275rem;
+  }
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.9375rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.5);
+  font-size: $font-size-tiny;
+  font-weight: $font-weight-sm;
+  transition: border-color 0.3s;
+  background-color: transparent;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+
+  @include respondTo("mobile") {
+    padding: 0.3rem 0;
+    font-size: $font-size-sm;
+  }
+}
+
+.errorInput {
+  border-bottom-color: $secondary-color;
+}
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.3125rem;
+  position: relative;
+}
+
+.errorDot {
+  position: absolute;
+  width: $spacing-lg;
+  height: $spacing-lg;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  right: 0;
+  bottom: $spacing-2xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respondTo("mobile") {
+    width: $spacing-md;
+    height: $spacing-md;
+    bottom: $spacing-xl;
+  }
+}
+
+.errorDot::after {
+  content: "!";
+  color: $tertiary-color;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: $secondary-color;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-sm;
+  display: block;
+  margin-top: 0.3125rem;
+}
+
+.submitButton {
+  letter-spacing: 0.2em;
+
+  @include respondTo("mobile") {
+    min-width: 10.375rem;
+    font-size: $font-size-xs;
+  }
+}
+
+.gratitudeModalTitle {
+  margin-bottom: $spacing-lg;
+
+  @include respondTo("mobile") {
+    min-width: 10.375rem;
+    margin-bottom: $spacing-base;
+  }
+}

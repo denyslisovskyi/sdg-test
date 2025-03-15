@@ -1,0 +1,63 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  @include respondTo("mobile") {
+    gap: $spacing-md;
+  }
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+}
+
+.stepNumber {
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  font-weight: $font-weight-xl;
+  font-size: $font-size-xl;
+  margin-right: $spacing-base;
+  min-width: 2rem;
+  text-align: right;
+
+  @include respondTo("mobile") {
+    font-size: $font-size-base;
+    min-width: 1.5rem;
+  }
+}
+
+.stepContent {
+  flex: 1;
+
+  :global p {
+    margin: 0;
+    font-size: $font-size-base;
+
+    @include respondTo("mobile") {
+      font-size: $font-size-tiny;
+    }
+  }
+
+  :global(.button) {
+    margin-top: $spacing-xs;
+    display: block;
+    max-width: 20rem;
+
+    @include respondTo("mobile") {
+      max-width: 100%;
+    }
+  }
+}
